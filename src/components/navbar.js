@@ -27,7 +27,8 @@ export default function Header() {
       <nav className="flex justify-between px-6  items-center">
         <div>
           <Image 
-          src={"/images/logo.png"}
+          src="/images/logo.png"
+          alt="Portfolio Logo"
           height={120}
           width={180}
           />

@@ -26,7 +26,7 @@ export default function Projects() {
                 Full-Stack
               </span>
             </div>
-            <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">Shine's Budget</h3>
+            <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">Shine&apos;s Budget</h3>
             <p className="text-gray-400 mb-4 leading-relaxed">
               Full-stack finance platform with budgeting&#44; portfolio tracking&#44; AI stock analysis&#44; and MFA authentication. Supports 7 languages.
             </p>
