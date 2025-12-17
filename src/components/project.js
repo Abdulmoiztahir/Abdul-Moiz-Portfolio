@@ -10,124 +10,120 @@ export default function Projects() {
         <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
 
           {/* Project 1 */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <div className="relative w-full h-64 mb-4 overflow-hidden rounded-lg">
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-[1.02] border border-gray-700/50 hover:border-blue-500/50">
+            <div className="relative w-full h-64 mb-4 overflow-hidden rounded-xl bg-gray-900">
               <Image
-                src="/images/ecommerce.png"  // Replace with your image path in the public folder
-                alt="Ecommerce Website"
-                layout="fill"  // Ensures the image fills the container
-                objectFit="contain"  // Display the whole image without cropping
-                className="rounded-lg"
+                src="/images/shinesbudget.png"
+                alt="Shine's Budget"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-xl transition-transform duration-500 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Ecommerce Website</h3>
-            <p className="text-gray-400 mb-4">
-              Ecommerce website using Reactjs&#44; Firebase&#44; Tailwind Css&#44; DummyJson API
+            <div className="mb-3">
+              <span className="inline-block bg-green-500 text-white text-xs font-medium px-4 py-1.5 rounded-full">
+                Full-Stack
+              </span>
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">Shine's Budget</h3>
+            <p className="text-gray-400 mb-4 leading-relaxed">
+              Full-stack finance platform with budgeting&#44; portfolio tracking&#44; AI stock analysis&#44; and MFA authentication. Supports 7 languages.
             </p>
-            <div className="flex flex-col justify-around items-center sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-              <Link
-                href="https://github.com/Abdulmoiztahir/Furniro.git"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <button className="flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg px-4 py-2">
-                  <GithubOutlined />
-                  <span>View on GitHub</span>
-                </button>
-              </Link>
-              <Link href="https://furniro-hhqa.vercel.app/" target="_blank" rel="noopener noreferrer">
-                <button className="text-center bg-blue-400 text-black px-4 py-2 rounded-lg hover:bg-blue-300">
-                  Live Demo
-                </button>
-              </Link>
+            <div className="flex flex-wrap gap-2">
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">Next.js 14</span>
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">NestJS</span>
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">MongoDB</span>
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">Docker</span>
             </div>
           </div>
 
           {/* Additional projects... */}
 
           {/* Project 2 */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <div className="relative w-full h-64 mb-4 overflow-hidden rounded-lg">
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-[1.02] border border-gray-700/50 hover:border-blue-500/50">
+            <div className="relative w-full h-64 mb-4 overflow-hidden rounded-xl bg-gray-900">
               <Image
-                src="/images/bulb.png"
-                alt="Blog App"
+                src="/images/qrcards.avif"
+                alt="QR Cards"
                 layout="fill"
-                objectFit="contain"
-                className="rounded-lg"
+                objectFit="cover"
+                className="rounded-xl transition-transform duration-500 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Bulb</h3>
-            <p className="text-gray-400 mb-4">
-              Blog App using HTML&#44; CSS&#44; Firebase&#44; JavaScript. Full responsive with public and private routes.
+            <div className="mb-3">
+              <span className="inline-block bg-cyan-400 text-white text-xs font-medium px-4 py-1.5 rounded-full">
+                Mobile Development
+              </span>
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">QR CARDS</h3>
+            <p className="text-gray-400 mb-4 leading-relaxed">
+              QRCARDS is a mobile application designed to transform the traditional business card into a digital.
             </p>
-            <div className="flex flex-col justify-around items-center sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-              <Link href="https://github.com/Abdulmoiztahir/JS_ASSIGHNMENTS/tree/main/BULB" target="_blank" rel="noopener noreferrer">
-                <button className="flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg px-4 py-2">
-                  <GithubOutlined />
-                  <span>View on GitHub</span>
-                </button>
-              </Link>
-              <Link href="https://splendid-belekoy-e083bf.netlify.app/" target="_blank" rel="noopener noreferrer">
-                <button className="text-center bg-blue-400 text-black px-4 py-2 rounded-lg hover:bg-blue-300">
-                  Live Demo
-                </button>
-              </Link>
+            <div className="flex flex-wrap gap-2">
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">React Native</span>
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">Firebase</span>
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">NFC</span>
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">Bubble.io</span>
             </div>
           </div>
 
           {/* Project 3 */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <div className="relative w-full h-64 mb-4 overflow-hidden rounded-lg">
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-[1.02] border border-gray-700/50 hover:border-blue-500/50">
+            <div className="relative w-full h-64 mb-4 overflow-hidden rounded-xl bg-gray-900">
               <Image
-                src="/images/weatherApp.png"
-                alt="Project 3"
+                src="/images/ecommerce.png"
+                alt="Furniro Ecommerce"
                 layout="fill"
-                objectFit="contain"
-                className="rounded-lg"
+                objectFit="cover"
+                className="rounded-xl transition-transform duration-500 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Weather App</h3>
-            <p className="text-gray-400 mb-4">
-            Weather App using Reactjs&#44; Firebase&#44; Tailwind Css&#44; One Weather API
+            <div className="mb-3">
+              <span className="inline-block bg-purple-500 text-white text-xs font-medium px-4 py-1.5 rounded-full">
+                E-Commerce
+              </span>
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">Furniro</h3>
+            <p className="text-gray-400 mb-4 leading-relaxed">
+              Modern furniture e-commerce platform with real-time cart management&#44; Firebase authentication&#44; and dynamic product catalog powered by DummyJson API.
             </p>
-            <div className="flex flex-col justify-around items-center sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-              <Link href="https://github.com/mustafaaly7/Weather-App-React-js" target="_blank" rel="noopener noreferrer">
-                <button className="flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg px-4 py-2">
-                  <GithubOutlined />
-                  <span>View on GitHub</span>
-                </button>
-              </Link>
-              <Link href="https://weather-app-react-js-inky.vercel.app/" target="_blank" rel="noopener noreferrer" className="text-center bg-blue-400 text-black px-4 py-2 rounded-lg hover:bg-blue-300">
-                Live Demo
-              </Link>
+            <div className="flex flex-wrap gap-2">
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">React.js</span>
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">Firebase</span>
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">Tailwind CSS</span>
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">API Integration</span>
             </div>
           </div>
 
           {/* Project 4 */}
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <div className="relative w-full h-64 mb-4 overflow-hidden rounded-lg">
+          <div className="group bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-xl shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 hover:scale-[1.02] border border-gray-700/50 hover:border-blue-500/50">
+            <div className="relative w-full h-64 mb-4 overflow-hidden rounded-xl bg-gray-900">
               <Image
-                src="/images/stopwatch.png"
-                alt="Virtual Assistant"
+                src="/images/caseintelligence.png"
+                alt="Case Intelligence Investigation"
                 layout="fill"
-                objectFit="contain"
-                className="rounded-lg"
+                objectFit="cover"
+                className="rounded-xl transition-transform duration-500 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-60"></div>
             </div>
-            <h3 className="text-xl font-semibold text-white mb-3">Stop Watch</h3>
-            <p className="text-gray-400 mb-4">
-              Used Html&#44; css&#44; Javascript&#44; and Speech synthesis functions to recognize voice and act accordingly.
+            <div className="mb-3">
+              <span className="inline-block bg-cyan-400 text-white text-xs font-medium px-4 py-1.5 rounded-full">
+                Web Development
+              </span>
+            </div>
+            <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors duration-300">CASE INTELLIGENCE Investigation</h3>
+            <p className="text-gray-400 mb-4 leading-relaxed">
+              Professional Case Management System to securely manage cases&#44; track relationships&#44; and collaborate with your team. Perfect for investigators and analysts.
             </p>
-            <div className="flex flex-col justify-around items-center sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0">
-              <Link href="https://github.com/Abdulmoiztahir/JS_ASSIGHNMENTS/tree/main/STOP%20WATCH" target="_blank" rel="noopener noreferrer">
-                <button className="flex items-center space-x-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg px-4 py-2">
-                  <GithubOutlined />
-                  <span>View on GitHub</span>
-                </button>
-              </Link>
-              <Link href="https://abdulmoiztahir.github.io/JS_ASSIGHNMENTS/STOP%20WATCH/index.html" target="_blank" rel="noopener noreferrer" className="text-center bg-blue-400 text-black px-4 py-2 rounded-lg hover:bg-blue-300">
-                Live Demo
-              </Link>
+            <div className="flex flex-wrap gap-2">
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">Next.js</span>
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">Node.js</span>
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">MongoDB</span>
+              <span className="bg-gray-700/50 text-gray-300 text-sm px-3 py-1 rounded-lg">AWS</span>
             </div>
           </div>
 

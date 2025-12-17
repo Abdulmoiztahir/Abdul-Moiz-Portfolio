@@ -3,7 +3,7 @@ export default function Contact() {
         <section id="contact" className="py-20 bg-black text-light-gray">
             <div className="container mx-auto px-6">
                 <h2 className="text-2xl font-bold text-white mb-6 ">Contact Me</h2>
-                <form className="bg-gray-800 p-6 rounded-lg shadow-lg" action="https://formsubmit.co/mustafaaaly27@gmail.com" method="POST">
+                <form className="bg-gray-800 p-6 rounded-lg shadow-lg" action="https://formsubmit.co/moiztahirtahir009@gmail.com" method="POST">
                     <div className="mb-4">
                         <label htmlFor="name" className="text-gray-400">Name</label>
                         <input

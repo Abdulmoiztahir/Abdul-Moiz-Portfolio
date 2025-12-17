@@ -1,15 +1,29 @@
 "use client"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="bg-black text-light-gray">
+    <header className={`text-light-gray sticky top-0 z-50 shadow-lg transition-all duration-300 ${isScrolled ? 'bg-black/60 backdrop-blur-lg' : 'bg-black'}`}>
       <nav className="flex justify-between px-6  items-center">
         <div>
           <Image 

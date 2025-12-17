@@ -6,19 +6,18 @@ import Hero from "@/components/hero";
 import Navbar from "@/components/navbar";
 import Projects from "@/components/project";
 import Skills from "@/components/skills";
-import Image from "next/image";
 
 export default function Home() {
   return (
     <div>
-     <Navbar />
-<Hero />
-<Skills />
-<Experience />
-<Projects />
-<Contact />
-<About />
-<Footer />
-   </div>
+      <Navbar />
+      <Hero />
+      <Skills />
+      <Experience />
+      <Projects />
+      <Contact />
+      <About />
+      <Footer />
+    </div>
   );
 }

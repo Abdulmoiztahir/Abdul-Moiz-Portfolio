@@ -13,8 +13,8 @@ const Experience = () => {
         <div className="flex flex-col md:flex-row gap-8 mb-10">
           {/* Logo / Company Image */}
           <div className="flex-shrink-0">
-            <Image 
-              src="/images/codeaplha.png" 
+            <Image
+              src="/images/codeaplha.png"
               alt="Company Logo"
               width={80}
               height={80}
@@ -26,40 +26,68 @@ const Experience = () => {
             <h3 className="text-white text-2xl font-semibold">
               Frontend Intern
             </h3>
-            <p className="text-gray-200 italic">Code Alpha | 15 oct - Present</p>
+            <p className="text-gray-200 italic">Code Alpha | 15 oct - Completed</p>
             <ul className="list-disc list-inside mt-3 space-y-2 text-gray-300">
               <li>Developed responsive web applications using React and Next.js.</li>
               <li>Buildin project using Mongodb and Firebase .</li>
             </ul>
           </div>
         </div>
-
-        {/* Additional Experience Entries - Repeat structure for each role */}
-        {/* Example Entry */}
-        {/* <div className="flex flex-col md:flex-row gap-8 mb-10">
+      </div>
+      <div className="container mx-auto px-6">
+        {/* Experience Entry */}
+        <div className="flex flex-col md:flex-row gap-8 mb-10">
+          {/* Logo / Company Image */}
           <div className="flex-shrink-0">
-            <Image 
-              src="/images/previous-company-logo.png" 
-              alt="Previous Company Logo"
+            <Image
+              src="/images/clustervalley.png"
+              alt="Company Logo"
               width={80}
               height={80}
               className="rounded-full"
             />
           </div>
+          {/* Role and Details */}
           <div>
-            <h3 className="text-gray-300 text-2xl font-semibold">
-              Frontend Developer
+            <h3 className="text-white text-2xl font-semibold">
+              Web Developer Intern
             </h3>
-            <p className="text-gray-400 italic">ABC Solutions | 2020 - 2022</p>
+            <p className="text-gray-200 italic">Cluster Valley | April 2025 - Completed</p>
             <ul className="list-disc list-inside mt-3 space-y-2 text-gray-300">
-              <li>Collaborated on design and development of client-facing applications.</li>
-              <li>Implemented UI components and handled API integration.</li>
-              <li>Managed cross-browser compatibility and debugging.</li>
+              <li>Developed responsive web applications using React and Next.js.</li>
+              <li>Buildin project using Mongodb and Firebase .</li>
             </ul>
           </div>
-        </div> */}
+        </div>
+      </div>
+      <div className="container mx-auto px-6">
+        {/* Experience Entry */}
+        <div className="flex flex-col md:flex-row gap-8 mb-10">
+          {/* Logo / Company Image */}
+          <div className="flex-shrink-0">
+            <Image
+              src="/images/clustervalley.png"
+              alt="Company Logo"
+              width={80}
+              height={80}
+              className="rounded-full"
+            />
+          </div>
+          {/* Role and Details */}
+          <div>
+            <h3 className="text-white text-2xl font-semibold">
+              Junior Web Developer
+            </h3>
+            <p className="text-gray-200 italic">June 2025 - Dec 2025</p>
+            <ul className="list-disc list-inside mt-3 space-y-2 text-gray-300">
+              <li>Developed responsive web applications using React and Next.js.</li>
+              <li>Buildin project using Mongodb and Firebase .</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
+
   );
 };
 

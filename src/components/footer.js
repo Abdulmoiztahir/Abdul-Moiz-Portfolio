@@ -10,7 +10,7 @@ export default function Footer() {
     <footer className="bg-black text-white py-4">
       <div className="container mx-auto text-center">
         <p className="text-xl">© 2024 Abdul moiz Tahir. All rights reserved.</p>
-        <div className="mt-4 flex justify-center items-center gap-4 flex-wrap">
+        <div className="mt-4 mb-10 flex justify-center items-center gap-4 flex-wrap">
           <Link
             href="https://github.com/Abdulmoiztahir"
             className="text-2xl text-gray-400 hover:text-white "
