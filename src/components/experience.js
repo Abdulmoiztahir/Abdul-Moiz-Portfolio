@@ -2,10 +2,10 @@ import Image from 'next/image';
 
 const Experience = () => {
   return (
-    <section id="experience" className="bg-black text-light-gray py-12">
+    <section id="experience" className="bg-background text-foreground py-12">
       <div className="container mx-auto px-6">
         {/* Section Heading */}
-        <h2 className=" text-blue-500 text-4xl font-bold mb-8 ">
+        <h2 className=" text-primary text-4xl font-bold mb-8 ">
           Experience
         </h2>
 
@@ -23,11 +23,11 @@ const Experience = () => {
           </div>
           {/* Role and Details */}
           <div>
-            <h3 className="text-white text-2xl font-semibold">
+            <h3 className="text-foreground text-2xl font-semibold">
               Frontend Intern
             </h3>
-            <p className="text-gray-200 italic">Code Alpha | 15 oct - Completed</p>
-            <ul className="list-disc list-inside mt-3 space-y-2 text-gray-300">
+            <p className="text-muted-foreground italic">Code Alpha | 15 oct - Completed</p>
+            <ul className="list-disc list-inside mt-3 space-y-2 text-muted-foreground">
               <li>Developed responsive web applications using React and Next.js.</li>
               <li>Buildin project using Mongodb and Firebase .</li>
             </ul>
@@ -49,11 +49,11 @@ const Experience = () => {
           </div>
           {/* Role and Details */}
           <div>
-            <h3 className="text-white text-2xl font-semibold">
+            <h3 className="text-foreground text-2xl font-semibold">
               Web Developer Intern
             </h3>
-            <p className="text-gray-200 italic">Cluster Valley | April 2025 - Completed</p>
-            <ul className="list-disc list-inside mt-3 space-y-2 text-gray-300">
+            <p className="text-muted-foreground italic">Cluster Valley | April 2025 - Completed</p>
+            <ul className="list-disc list-inside mt-3 space-y-2 text-muted-foreground">
               <li>Developed responsive web applications using React and Next.js.</li>
               <li>Buildin project using Mongodb and Firebase .</li>
             </ul>
@@ -75,11 +75,11 @@ const Experience = () => {
           </div>
           {/* Role and Details */}
           <div>
-            <h3 className="text-white text-2xl font-semibold">
+            <h3 className="text-foreground text-2xl font-semibold">
               Junior Web Developer
             </h3>
-            <p className="text-gray-200 italic">June 2025 - Dec 2025</p>
-            <ul className="list-disc list-inside mt-3 space-y-2 text-gray-300">
+            <p className="text-muted-foreground italic">June 2025 - Dec 2025</p>
+            <ul className="list-disc list-inside mt-3 space-y-2 text-muted-foreground">
               <li>Developed responsive web applications using React and Next.js.</li>
               <li>Buildin project using Mongodb and Firebase .</li>
             </ul>

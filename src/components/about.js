@@ -1,16 +1,16 @@
 export default function About() {
   return (
-    <section id="about" className="py-20 bg-black text-light-gray">
+    <section id="about" className="py-20 bg-background text-foreground">
       <div className="container mx-auto px-6">
-        <h2 className="text-3xl font-bold text-white mb-6 ">About Me</h2>
+        <h2 className="text-3xl font-bold text-foreground mb-6 ">About Me</h2>
 
         <div className="">
-          <div className="bg-gray-800 p-6 rounded-lg shadow-lg">
-            <h3 className="text-xl font-semibold text-white mb-3">
+          <div className="bg-card p-6 rounded-lg shadow-lg border border-border">
+            <h3 className="text-xl font-semibold text-card-foreground mb-3">
               Introduction
             </h3>
-            <p className="text-gray-400">
-              <span className="font-semibold text-xl">
+            <p className="text-muted-foreground">
+              <span className="font-semibold text-xl text-foreground">
                 {" "}
                 I&apos;m Abdul Moiz Tahir&#44;
               </span>{" "}
@@ -23,16 +23,16 @@ export default function About() {
           </div>
         </div>
 
-        <div className="bg-gray-800 p-6 rounded-lg shadow-lg mt-8">
-          <h3 className="text-xl font-semibold text-white mb-3">
+        <div className="bg-card p-6 rounded-lg shadow-lg mt-8 border border-border">
+          <h3 className="text-xl font-semibold text-card-foreground mb-3">
             Education & Certifications
           </h3>
-          <p className="text-gray-400">
+          <p className="text-muted-foreground">
             Intermadiate Degree in Commerce - Islamia College
             (2022 - 2024)
           </p>
-          <p className="text-gray-400 mt-4">
-            <span className="text-xl font-semibold text-white mb-3">
+          <div className="text-muted-foreground mt-4">
+            <span className="text-xl font-semibold text-foreground mb-3 block">
               {" "}
               Certifications:
             </span>
@@ -43,7 +43,7 @@ export default function About() {
                 (2023 - 2024)
               </li>
             </ul>
-          </p>
+          </div>
         </div>
       </div>
     </section>
