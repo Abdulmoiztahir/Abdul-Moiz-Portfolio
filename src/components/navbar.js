@@ -2,13 +2,24 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ThemeToggle } from "./theme-toggle";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isClosing, setIsClosing] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleMenu = () => {
+    if (isOpen) {
+      setIsClosing(true);
+      setTimeout(() => {
+        setIsOpen(false);
+        setIsClosing(false);
+      }, 300);
+    } else {
+      setIsOpen(true);
+    }
+  };
 
   const navLinks = [
     { href: "#about", label: "About" },
@@ -65,26 +76,36 @@ export default function Header() {
             ))}
           </ul>
 
-          <ThemeToggle />
-
           <button
             onClick={toggleMenu}
             className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-slate-200 shadow-[0_8px_22px_rgba(2,8,18,0.28)] backdrop-blur-md transition duration-300 hover:bg-white/15 lg:hidden"
             aria-label="Toggle menu"
           >
-            <span className="text-xl leading-none">{isOpen ? "x" : "="}</span>
+            {isOpen ? (
+              <X className="h-5 w-5" />
+            ) : (
+              <Menu className="h-5 w-5" />
+            )}
           </button>
         </div>
       </nav>
 
-      {isOpen && (
-        <ul className="container-shell relative mt-3 flex flex-col gap-2 overflow-hidden rounded-2xl border border-white/15 bg-slate-900/55 p-4 shadow-[0_16px_42px_rgba(2,8,20,0.35)] backdrop-blur-xl lg:hidden">
+      {(isOpen || isClosing) && (
+        <ul className={`container-shell relative mt-3 flex flex-col gap-2 overflow-hidden rounded-2xl border border-white/15 bg-slate-900/55 p-4 shadow-[0_16px_42px_rgba(2,8,20,0.35)] backdrop-blur-xl lg:hidden duration-300 ${
+          isClosing
+            ? 'animate-out fade-out slide-out-to-top-2'
+            : 'animate-in fade-in slide-in-from-top-2'
+        }`}>
           {navLinks.map((link) => (
-            <li key={link.href}>
+            <li key={link.href} className={`duration-300 ${
+              isClosing
+                ? 'animate-out fade-out slide-out-to-left-4'
+                : 'animate-in fade-in slide-in-from-left-4'
+            }`}>
               <Link
                 href={link.href}
                 className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition duration-300 hover:bg-white/10 hover:text-cyan-100"
-                onClick={() => setIsOpen(false)}
+                onClick={() => toggleMenu()}
               >
                 {link.label}
               </Link>
