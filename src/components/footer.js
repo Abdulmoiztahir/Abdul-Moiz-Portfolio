@@ -1,29 +1,33 @@
 import {
   GithubOutlined,
   LinkedinFilled,
-  PinterestFilled,
 } from "@ant-design/icons";
 import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="bg-background text-foreground py-4 border-t border-border">
-      <div className="container mx-auto text-center">
-        <p className="text-xl text-muted-foreground">© 2024 Abdul moiz Tahir. All rights reserved.</p>
-        <div className="mt-4 mb-10 flex justify-center items-center gap-4 flex-wrap">
+    <footer className="pb-12 pt-8">
+      <div className="container-shell glass-card flex flex-col items-center justify-between gap-4 px-6 py-6 text-center md:flex-row md:text-left">
+        <p className="text-sm text-slate-300">
+          © 2026 Abdul Moiz Tahir. Crafted with precision and modern web standards.
+        </p>
+        <div className="flex items-center gap-5">
           <Link
             href="https://github.com/Abdulmoiztahir"
-            className="text-2xl text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-2 rounded-lg border border-transparent px-2 py-1 text-sm font-medium text-slate-300 transition duration-300 hover:border-white/15 hover:bg-white/10 hover:text-cyan-100"
+            target="_blank"
+            rel="noreferrer"
           >
-            {" "}
-            <GithubOutlined className="mr-2" />
+            <GithubOutlined />
             GitHub
           </Link>
           <Link
             href="https://www.linkedin.com/in/abdull-moiz-b27438313/"
-            className="text-2xl text-muted-foreground hover:text-foreground transition-colors"
+            className="inline-flex items-center gap-2 rounded-lg border border-transparent px-2 py-1 text-sm font-medium text-slate-300 transition duration-300 hover:border-white/15 hover:bg-white/10 hover:text-cyan-100"
+            target="_blank"
+            rel="noreferrer"
           >
-            <LinkedinFilled className="text-[#0077B5] mr-2" />
+            <LinkedinFilled />
             LinkedIn
           </Link>
         </div>

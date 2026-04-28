@@ -10,9 +10,17 @@ export default function Header() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  const navLinks = [
+    { href: "#about", label: "About" },
+    { href: "#skills", label: "Skills" },
+    { href: "#projects", label: "Projects" },
+    { href: "#experience", label: "Experience" },
+    { href: "#contact", label: "Contact" },
+  ];
+
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 18) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -24,91 +32,64 @@ export default function Header() {
   }, []);
 
   return (
-    <header className={`sticky top-0 z-50 shadow-lg transition-all duration-300 ${isScrolled ? 'bg-background/60 backdrop-blur-lg' : 'bg-background'}`}>
-      <nav className="flex justify-between px-6 items-center">
-        <div className="flex items-center">
-          <Image
-            src="/images/logo.png"
-            alt="Portfolio Logo"
-            height={120}
-            width={180}
-            className="invert dark:invert-0"
-          />
+    <header className="sticky top-4 z-50 px-4 md:px-8">
+      <nav
+        className={`container-shell relative overflow-hidden flex items-center justify-between rounded-2xl border px-4 py-3 shadow-[0_14px_38px_rgba(3,8,20,0.35)] transition-all duration-300 md:px-6 ${
+          isScrolled
+            ? "border-white/20 bg-slate-900/55 backdrop-blur-xl"
+            : "border-white/10 bg-slate-900/35 backdrop-blur-lg"
+        }`}
+      >
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-br from-white/20 via-white/[0.06] to-transparent" />
+        <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/65 to-transparent" />
+        <div className="flex items-center gap-3">
+          <div className="relative h-9 w-9 overflow-hidden rounded-lg border border-white/20 bg-white/5">
+            <Image src="/images/myLogo.png" alt="Portfolio Logo" fill className="object-contain p-1" />
+          </div>
+          <p className="font-[family-name:var(--font-sora)] text-sm font-semibold tracking-[0.16em] text-slate-200 md:text-base">
+            ABDUL MOIZ
+          </p>
         </div>
 
-        <div className="flex items-center space-x-4">
-          {/* Links for Large Screens */}
-          <ul className="hidden lg:flex space-x-6">
-            <li>
-              <Link href="#about" className="text-muted-foreground hover:text-foreground transition-colors">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="#skills" className="text-muted-foreground hover:text-foreground transition-colors">
-                Skills
-              </Link>
-            </li>
-            <li>
-              <Link href="#projects" className="text-muted-foreground hover:text-foreground transition-colors">
-                Projects
-              </Link>
-            </li>
-            <li>
-              <Link href="#contact" className="text-muted-foreground hover:text-foreground transition-colors">
-                Contact
-              </Link>
-            </li>
+        <div className="flex items-center gap-3 md:gap-5">
+          <ul className="hidden items-center gap-5 lg:flex">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className="text-sm font-medium text-slate-300 transition duration-300 hover:text-cyan-100"
+                >
+                  {link.label}
+                </Link>
+              </li>
+            ))}
           </ul>
 
           <ThemeToggle />
 
-          {/* Hamburger Icon */}
           <button
             onClick={toggleMenu}
-            className="lg:hidden text-foreground focus:outline-none"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-white/15 bg-white/10 text-slate-200 shadow-[0_8px_22px_rgba(2,8,18,0.28)] backdrop-blur-md transition duration-300 hover:bg-white/15 lg:hidden"
+            aria-label="Toggle menu"
           >
-            <svg
-              className="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16m-7 6h7"
-              />
-            </svg>
+            <span className="text-xl leading-none">{isOpen ? "x" : "="}</span>
           </button>
         </div>
       </nav>
 
-      {/* Mobile Menu (Visible Only When Open) */}
       {isOpen && (
-        <ul className="lg:hidden flex flex-col space-y-4 mt-2 px-6 pb-4 bg-background text-muted-foreground">
-          <li>
-            <Link href="#about" className="hover:text-foreground transition-colors" onClick={() => setIsOpen(false)}>
-              About
-            </Link>
-          </li>
-          <li>
-            <Link href="#skills" className="hover:text-foreground transition-colors" onClick={() => setIsOpen(false)}>
-              Skills
-            </Link>
-          </li>
-          <li>
-            <Link href="#projects" className="hover:text-foreground transition-colors" onClick={() => setIsOpen(false)}>
-              Projects
-            </Link>
-          </li>
-          <li>
-            <Link href="#contact" className="hover:text-foreground transition-colors" onClick={() => setIsOpen(false)}>
-              Contact
-            </Link>
-          </li>
+        <ul className="container-shell relative mt-3 flex flex-col gap-2 overflow-hidden rounded-2xl border border-white/15 bg-slate-900/55 p-4 shadow-[0_16px_42px_rgba(2,8,20,0.35)] backdrop-blur-xl lg:hidden">
+          {navLinks.map((link) => (
+            <li key={link.href}>
+              <Link
+                href={link.href}
+                className="block rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition duration-300 hover:bg-white/10 hover:text-cyan-100"
+                onClick={() => setIsOpen(false)}
+              >
+                {link.label}
+              </Link>
+            </li>
+          ))}
         </ul>
       )}
     </header>

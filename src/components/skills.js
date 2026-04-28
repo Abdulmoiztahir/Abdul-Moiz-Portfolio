@@ -16,34 +16,53 @@ import { FaPeopleCarry } from "react-icons/fa";
 import { FaUserClock } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
+const coreSkills = [
+    { Icon: FaHtml5, label: "HTML", tone: "text-orange-300" },
+    { Icon: FaCss3, label: "CSS", tone: "text-blue-300" },
+    { Icon: IoLogoJavascript, label: "JavaScript", tone: "text-amber-200" },
+    { Icon: FaReact, label: "React.js", tone: "text-cyan-200" },
+    { Icon: SiNextdotjs, label: "Next.js", tone: "text-slate-100" },
+    { Icon: SiMongodb, label: "MongoDB", tone: "text-emerald-300" },
+    { Icon: IoLogoFirebase, label: "Firebase", tone: "text-yellow-200" },
+    { Icon: RiTailwindCssFill, label: "Tailwind CSS", tone: "text-cyan-200" },
+    { Icon: IoLogoNodejs, label: "Node.js", tone: "text-green-300" },
+    { Icon: SiExpress, label: "Express.js", tone: "text-slate-100" },
+    { Icon: FaBootstrap, label: "Bootstrap", tone: "text-indigo-300" },
+    { Icon: SiPostman, label: "Postman", tone: "text-orange-300" },
+    { Icon: FaGithub, label: "GitHub", tone: "text-slate-200" },
+];
+
+const softSkills = [
+    { Icon: FaPeopleCarry, label: "Teamwork", tone: "text-cyan-200" },
+    { Icon: AiOutlineTeam, label: "Leadership", tone: "text-blue-200" },
+    { Icon: FaUserClock, label: "Quick Learner", tone: "text-violet-200" },
+];
 
 export default function Skills() {
     return (
-        <section id="skills" className="py-20 bg-background text-foreground">
-            <div className="container mx-auto px-6">
-                <div className="flex flex-col gap-8">
-                    <h2 className="text-4xl font-bold  mb-6 font-sans text-primary ">Skills</h2>
-                    <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-6 lg:grid-cols-9 gap-y-8 gap-x-4 text-center">
-                        {/* Main Skills */}
-                        <SkillCard Icon={FaHtml5} label="HTML" />
-                        <SkillCard Icon={FaCss3} label="CSS" />
-                        <SkillCard Icon={IoLogoJavascript} label="JavaScript" />
-                        <SkillCard Icon={FaReact} label="React.js" />
-                        <SkillCard Icon={SiNextdotjs} label="Next.js" />
-                        <SkillCard Icon={SiMongodb} label="MongoDB" />
-                        <SkillCard Icon={IoLogoFirebase} label="Firebase" />
-                        <SkillCard Icon={RiTailwindCssFill} label="Tailwind CSS" />
-                        <SkillCard Icon={FaGithub} label="Github" />
-                        <SkillCard Icon={FaBootstrap} label="Bootstrap" />
-                        <SkillCard Icon={SiPostman} label="Postman" />
-                        <SkillCard Icon={SiExpress} label="Express Js" />
-                        <SkillCard Icon={IoLogoNodejs} label="Node Js" />
+        <section id="skills" className="section-space">
+            <div className="container-shell">
+                <span className="section-kicker">Capabilities</span>
+                <h2 className="section-title font-[family-name:var(--font-sora)]">Production-ready skills for modern web teams.</h2>
 
-                        {/* Soft Skills */}
-                        <SkillCard Icon={FaPeopleCarry} label="Teamwork" />
-                        <SkillCard Icon={AiOutlineTeam} label="Leadership" />
-                        <SkillCard Icon={FaUserClock} label="Quick Learner" />
-                    </div>
+                <div className="mt-10 space-y-6">
+                    <article className="glass-card p-6 md:p-8">
+                        <p className="mb-5 text-sm font-semibold uppercase tracking-[0.12em] text-slate-300">Core Stack</p>
+                        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+                            {coreSkills.map((skill) => (
+                                <SkillCard key={skill.label} Icon={skill.Icon} label={skill.label} tone={skill.tone} />
+                            ))}
+                        </div>
+                    </article>
+
+                    <article className="glass-card p-6 md:p-8">
+                        <p className="mb-5 text-sm font-semibold uppercase tracking-[0.12em] text-slate-300">Work Style</p>
+                        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+                            {softSkills.map((skill) => (
+                                <SkillCard key={skill.label} Icon={skill.Icon} label={skill.label} tone={skill.tone} />
+                            ))}
+                        </div>
+                    </article>
                 </div>
             </div>
         </section>

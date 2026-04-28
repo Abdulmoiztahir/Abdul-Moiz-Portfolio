@@ -1,42 +1,71 @@
 export default function Contact() {
     return (
-        <section id="contact" className="py-20 bg-background text-foreground">
-            <div className="container mx-auto px-6">
-                <h2 className="text-2xl font-bold text-foreground mb-6 ">Contact Me</h2>
-                <form className="bg-card p-6 rounded-lg shadow-lg border border-border" action="https://formsubmit.co/moiztahirtahir009@gmail.com" method="POST">
-                    <div className="mb-4">
-                        <label htmlFor="name" className="text-muted-foreground">Name</label>
+        <section id="contact" className="section-space">
+            <div className="container-shell grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+                <article className="glass-card p-6 md:p-8">
+                    <span className="section-kicker">Contact</span>
+                    <h2 className="font-[family-name:var(--font-sora)] text-3xl font-semibold text-white md:text-4xl">
+                        Ready to build your next product?
+                    </h2>
+                    <p className="mt-4 text-sm leading-relaxed text-slate-300 md:text-base">
+                        I am available for freelance projects, internships, and full-time opportunities. Share a quick brief and I will get back with a practical plan.
+                    </p>
+
+                    <div className="mt-8 space-y-3 text-sm text-slate-300">
+                        <p>Email: moiztahirtahir009@gmail.com</p>
+                        <p>Role: MERN Stack Developer</p>
+                        <p>Location: Pakistan</p>
+                    </div>
+                </article>
+
+                <form
+                    className="glass-card space-y-4 p-6 md:p-8"
+                    action="https://formsubmit.co/moiztahirtahir009@gmail.com"
+                    method="POST"
+                >
+                    <div>
+                        <label htmlFor="name" className="mb-2 block text-sm font-medium text-slate-200">
+                            Full Name
+                        </label>
                         <input
                             type="text"
                             id="name"
-                            name="name" // Add name attribute
-                            placeholder="Enter Your Name"
-                            className="w-full bg-muted text-foreground p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                            name="name"
+                            required
+                            placeholder="Your name"
+                            className="liquid-field"
                         />
                     </div>
-                    <div className="mb-4">
-                        <label htmlFor="email" className="text-muted-foreground">Email</label>
+
+                    <div>
+                        <label htmlFor="email" className="mb-2 block text-sm font-medium text-slate-200">
+                            Email Address
+                        </label>
                         <input
                             type="email"
                             id="email"
-                            name="email" // Add name attribute
-                            placeholder="Enter Your Email Address"
-                            className="w-full bg-muted text-foreground p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                            name="email"
+                            required
+                            placeholder="you@example.com"
+                            className="liquid-field"
                         />
                     </div>
-                    <div className="mb-4">
-                        <label htmlFor="message" className="text-muted-foreground">Message</label>
+
+                    <div>
+                        <label htmlFor="message" className="mb-2 block text-sm font-medium text-slate-200">
+                            Project Brief
+                        </label>
                         <textarea
                             id="message"
-                            name="message" // Add name attribute
-                            placeholder="Write Your Message Here"
-                            className="w-full bg-muted text-foreground p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                            name="message"
+                            required
+                            rows={5}
+                            placeholder="Tell me about your goals, timeline, and scope."
+                            className="liquid-field"
                         ></textarea>
                     </div>
-                    <button
-                        type="submit"
-                        className="bg-primary text-primary-foreground p-3 rounded-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-ring"
-                    >
+
+                    <button type="submit" className="premium-btn w-full sm:w-auto">
                         Send Message
                     </button>
                 </form>

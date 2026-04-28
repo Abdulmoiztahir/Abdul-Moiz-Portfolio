@@ -1,132 +1,106 @@
-import Image from 'next/image'
-import { GithubOutlined } from '@ant-design/icons'  // Import GitHub icon from Ant Design
-import Link from 'next/link'
+"use client"
+
+import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+const projects = [
+  {
+    title: "Shine's Budget",
+    category: 'Full-Stack Finance Platform',
+    image: '/images/shinesbudget.png',
+    description:
+      'A secure budgeting and portfolio platform with AI-assisted stock analysis, MFA, and multilingual support.',
+    tech: ['Next.js', 'NestJS', 'MongoDB', 'Docker'],
+    link: '#',
+  },
+  {
+    title: 'QR Cards',
+    category: 'Mobile Product',
+    image: '/images/qrcards.avif',
+    description:
+      'A digital business card system using mobile workflows, NFC integration, and instant profile sharing.',
+    tech: ['React Native', 'Firebase', 'NFC', 'Bubble'],
+    link: '#',
+  },
+  {
+    title: 'Furniro Commerce',
+    category: 'E-Commerce Experience',
+    image: '/images/ecommerce.png',
+    description:
+      'Furniture storefront with dynamic catalog sync, real-time cart behavior, and clean conversion-first UI.',
+    tech: ['React.js', 'Firebase', 'Tailwind', 'REST APIs'],
+    link: '#',
+  },
+  {
+    title: 'Case Intelligence',
+    category: 'Case Management SaaS',
+    image: '/images/caseintelligence.png',
+    description:
+      'Professional investigation workspace for case tracking, secure collaboration, and relationship mapping.',
+    tech: ['Next.js', 'Node.js', 'MongoDB', 'AWS'],
+    link: '#',
+  },
+];
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-20 bg-background text-foreground">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-foreground mb-6 ">Projects</h2>
-        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <section id="projects" className="section-space">
+      <div className="container-shell">
+        <span className="section-kicker">Projects</span>
+        <h2 className="section-title font-[family-name:var(--font-sora)]">Selected work built for real-world users and teams.</h2>
 
-          {/* Project 1 */}
-          <div className="group bg-card p-6 rounded-xl shadow-2xl hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02] border border-border hover:border-primary/50">
-            <div className="relative w-full h-64 mb-4 overflow-hidden rounded-xl bg-muted">
-              <Image
-                src="/images/shinesbudget.png"
-                alt="Shine's Budget"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-xl transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
-            </div>
-            <div className="mb-3">
-              <span className="inline-block bg-green-500 text-white text-xs font-medium px-4 py-1.5 rounded-full">
-                Full-Stack
-              </span>
-            </div>
-            <h3 className="text-2xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors duration-300">Shine&apos;s Budget</h3>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              Full-stack finance platform with budgeting&#44; portfolio tracking&#44; AI stock analysis&#44; and MFA authentication. Supports 7 languages.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">Next.js 14</span>
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">NestJS</span>
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">MongoDB</span>
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">Docker</span>
-            </div>
-          </div>
+        <div className="mt-12 grid gap-6 md:grid-cols-2">
+          {projects.map((project, index) => (
+            <motion.article
+              key={project.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="glass-card liquid-hover group"
+            >
+              <div className="relative h-56 overflow-hidden border-b border-white/10">
+                <Image
+                  src={project.image}
+                  alt={project.title}
+                  fill
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/35 to-transparent" />
+                <p className="absolute bottom-4 left-4 rounded-full border border-cyan-200/30 bg-cyan-300/10 px-3 py-1 text-xs font-medium tracking-wide text-cyan-100">
+                  {project.category}
+                </p>
+              </div>
 
-          {/* Project 2 */}
-          <div className="group bg-card p-6 rounded-xl shadow-2xl hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02] border border-border hover:border-primary/50">
-            <div className="relative w-full h-64 mb-4 overflow-hidden rounded-xl bg-muted">
-              <Image
-                src="/images/qrcards.avif"
-                alt="QR Cards"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-xl transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
-            </div>
-            <div className="mb-3">
-              <span className="inline-block bg-cyan-400 text-white text-xs font-medium px-4 py-1.5 rounded-full">
-                Mobile Development
-              </span>
-            </div>
-            <h3 className="text-2xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors duration-300">QR CARDS</h3>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              QRCARDS is a mobile application designed to transform the traditional business card into a digital.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">React Native</span>
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">Firebase</span>
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">NFC</span>
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">Bubble.io</span>
-            </div>
-          </div>
+              <div className="p-6">
+                <h3 className="font-[family-name:var(--font-sora)] text-2xl font-semibold text-white">{project.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-slate-300">{project.description}</p>
 
-          {/* Project 3 */}
-          <div className="group bg-card p-6 rounded-xl shadow-2xl hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02] border border-border hover:border-primary/50">
-            <div className="relative w-full h-64 mb-4 overflow-hidden rounded-xl bg-muted">
-              <Image
-                src="/images/ecommerce.png"
-                alt="Furniro Ecommerce"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-xl transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
-            </div>
-            <div className="mb-3">
-              <span className="inline-block bg-purple-500 text-white text-xs font-medium px-4 py-1.5 rounded-full">
-                E-Commerce
-              </span>
-            </div>
-            <h3 className="text-2xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors duration-300">Furniro</h3>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              Modern furniture e-commerce platform with real-time cart management&#44; Firebase authentication&#44; and dynamic product catalog powered by DummyJson API.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">React.js</span>
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">Firebase</span>
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">Tailwind CSS</span>
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">API Integration</span>
-            </div>
-          </div>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.tech.map((item) => (
+                    <span
+                      key={item}
+                      className="rounded-full border border-white/20 bg-white/10 px-3 py-1 text-xs font-medium text-slate-200 backdrop-blur-sm"
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
 
-          {/* Project 4 */}
-          <div className="group bg-card p-6 rounded-xl shadow-2xl hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02] border border-border hover:border-primary/50">
-            <div className="relative w-full h-64 mb-4 overflow-hidden rounded-xl bg-muted">
-              <Image
-                src="/images/caseintelligence.png"
-                alt="Case Intelligence Investigation"
-                layout="fill"
-                objectFit="cover"
-                className="rounded-xl transition-transform duration-500 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
-            </div>
-            <div className="mb-3">
-              <span className="inline-block bg-cyan-400 text-white text-xs font-medium px-4 py-1.5 rounded-full">
-                Web Development
-              </span>
-            </div>
-            <h3 className="text-2xl font-bold text-card-foreground mb-3 group-hover:text-primary transition-colors duration-300">CASE INTELLIGENCE Investigation</h3>
-            <p className="text-muted-foreground mb-4 leading-relaxed">
-              Professional Case Management System to securely manage cases&#44; track relationships&#44; and collaborate with your team. Perfect for investigators and analysts.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">Next.js</span>
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">Node.js</span>
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">MongoDB</span>
-              <span className="bg-muted text-muted-foreground text-sm px-3 py-1 rounded-lg">AWS</span>
-            </div>
-          </div>
-
+                <Link
+                  href={project.link}
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-cyan-200 transition hover:text-cyan-100"
+                >
+                  View Project
+                  <ArrowUpRight className="h-4 w-4" />
+                </Link>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,93 +1,83 @@
+"use client"
+
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+
+const experiences = [
+  {
+    company: 'Code Alpha',
+    role: 'Frontend Intern',
+    period: 'Oct 2024 - Completed',
+    logo: '/images/codeaplha.png',
+    points: [
+      'Built responsive user interfaces using React and Next.js with reusable component patterns.',
+      'Supported backend integration tasks using Firebase and MongoDB across project features.',
+    ],
+  },
+  {
+    company: 'Cluster Valley',
+    role: 'Web Developer Intern',
+    period: 'Apr 2025 - Completed',
+    logo: '/images/clustervalley.png',
+    points: [
+      'Implemented interactive frontend modules with performance-focused styling and responsive behavior.',
+      'Collaborated on full-stack workflows involving API integrations and production-ready deployment tasks.',
+    ],
+  },
+  {
+    company: 'Cluster Valley',
+    role: 'Junior Web Developer',
+    period: 'Jun 2025 - Dec 2025',
+    logo: '/images/clustervalley.png',
+    points: [
+      'Delivered maintainable features in a fast-paced product environment with clear handoff documentation.',
+      'Improved UI consistency and data flow across modules built with Next.js, MongoDB, and Node.js.',
+    ],
+  },
+];
 
 const Experience = () => {
   return (
-    <section id="experience" className="bg-background text-foreground py-12">
-      <div className="container mx-auto px-6">
-        {/* Section Heading */}
-        <h2 className=" text-primary text-4xl font-bold mb-8 ">
-          Experience
-        </h2>
+    <section id="experience" className="section-space">
+      <div className="container-shell">
+        <span className="section-kicker">Experience</span>
+        <h2 className="section-title font-[family-name:var(--font-sora)]">Hands-on contributions across internships and product teams.</h2>
 
-        {/* Experience Entry */}
-        <div className="flex flex-col md:flex-row gap-8 mb-10">
-          {/* Logo / Company Image */}
-          <div className="flex-shrink-0">
-            <Image
-              src="/images/codeaplha.png"
-              alt="Company Logo"
-              width={80}
-              height={80}
-              className="rounded-full"
-            />
-          </div>
-          {/* Role and Details */}
-          <div>
-            <h3 className="text-foreground text-2xl font-semibold">
-              Frontend Intern
-            </h3>
-            <p className="text-muted-foreground italic">Code Alpha | 15 oct - Completed</p>
-            <ul className="list-disc list-inside mt-3 space-y-2 text-muted-foreground">
-              <li>Developed responsive web applications using React and Next.js.</li>
-              <li>Buildin project using Mongodb and Firebase .</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="container mx-auto px-6">
-        {/* Experience Entry */}
-        <div className="flex flex-col md:flex-row gap-8 mb-10">
-          {/* Logo / Company Image */}
-          <div className="flex-shrink-0">
-            <Image
-              src="/images/clustervalley.png"
-              alt="Company Logo"
-              width={80}
-              height={80}
-              className="rounded-full"
-            />
-          </div>
-          {/* Role and Details */}
-          <div>
-            <h3 className="text-foreground text-2xl font-semibold">
-              Web Developer Intern
-            </h3>
-            <p className="text-muted-foreground italic">Cluster Valley | April 2025 - Completed</p>
-            <ul className="list-disc list-inside mt-3 space-y-2 text-muted-foreground">
-              <li>Developed responsive web applications using React and Next.js.</li>
-              <li>Buildin project using Mongodb and Firebase .</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div className="container mx-auto px-6">
-        {/* Experience Entry */}
-        <div className="flex flex-col md:flex-row gap-8 mb-10">
-          {/* Logo / Company Image */}
-          <div className="flex-shrink-0">
-            <Image
-              src="/images/clustervalley.png"
-              alt="Company Logo"
-              width={80}
-              height={80}
-              className="rounded-full"
-            />
-          </div>
-          {/* Role and Details */}
-          <div>
-            <h3 className="text-foreground text-2xl font-semibold">
-              Junior Web Developer
-            </h3>
-            <p className="text-muted-foreground italic">June 2025 - Dec 2025</p>
-            <ul className="list-disc list-inside mt-3 space-y-2 text-muted-foreground">
-              <li>Developed responsive web applications using React and Next.js.</li>
-              <li>Buildin project using Mongodb and Firebase .</li>
-            </ul>
-          </div>
+        <div className="relative mt-12 space-y-6 before:absolute before:bottom-2 before:left-[1.1rem] before:top-2 before:hidden before:w-px before:bg-white/15 md:before:block">
+          {experiences.map((item, index) => (
+            <motion.article
+              key={`${item.company}-${item.role}`}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="glass-card liquid-hover relative grid gap-4 p-6 md:grid-cols-[auto_1fr] md:gap-6 md:p-7"
+            >
+              <div className="relative z-10 h-11 w-11 overflow-hidden rounded-full border border-white/20 bg-white/5 md:mt-1">
+                <Image src={item.logo} alt={item.company} fill className="object-cover" />
+              </div>
+
+              <div>
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="font-[family-name:var(--font-sora)] text-xl font-semibold text-white">{item.role}</h3>
+                  <p className="text-sm text-cyan-200">{item.period}</p>
+                </div>
+                <p className="mt-1 text-sm font-medium text-slate-300">{item.company}</p>
+
+                <ul className="mt-4 space-y-2 text-sm leading-relaxed text-slate-300">
+                  {item.points.map((point) => (
+                    <li key={point} className="flex gap-2">
+                      <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-cyan-200" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>
-
   );
 };
 
