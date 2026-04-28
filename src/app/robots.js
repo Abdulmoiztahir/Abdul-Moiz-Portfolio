@@ -6,7 +6,7 @@ export default function robots() {
         allow: '/',
       },
     ],
-    sitemap: 'https://abdulmoizdev.me/sitemap.xml',
+    sitemap: ['https://abdulmoizdev.me/sitemap.xml'],
     host: 'https://abdulmoizdev.me',
   };
 }
