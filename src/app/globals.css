@@ -55,7 +55,7 @@
 
 @layer components {
   .container-shell {
-    @apply mx-auto w-full px-4 sm:px-6 md:px-10 lg:px-12;
+    @apply mx-auto w-full max-w-[90%] px-4 sm:px-6 md:px-10 lg:px-12;
   }
 
   .glass-card {
