@@ -134,7 +134,7 @@ export default function Contact() {
                 >
                     {submitSuccess && (
                         <div className="rounded-lg border border-cyan-400/30 bg-cyan-400/10 p-4 text-sm text-cyan-200">
-                            ✓ Thanks for reaching out! I've received your message and will get back to you within 24 hours.
+                            ✓ Thanks for reaching out! I&apos;ve received your message and will get back to you within 24 hours.
                         </div>
                     )}
 
