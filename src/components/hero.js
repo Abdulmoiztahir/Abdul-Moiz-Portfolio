@@ -35,9 +35,14 @@ export default function Hero() {
                         <Link href="#projects" className="premium-btn">
                             View Selected Work
                         </Link>
-                        <Link href="#contact" className="premium-btn-muted">
+                        <a 
+                            href="https://wa.me/923233450785?text=Hi%20Abdul%20Moiz%2C%20I%20would%20like%20to%20discuss%20a%20project."
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="premium-btn-muted"
+                        >
                             Book a Quick Call
-                        </Link>
+                        </a>
                     </motion.div>
 
                     <motion.div variants={fadeUp} className="flex flex-wrap gap-6 pt-4">
