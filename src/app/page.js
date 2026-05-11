@@ -13,7 +13,7 @@ export default function Home() {
     '@type': 'Person',
     name: 'Abdul Moiz',
     url: 'https://abdulmoizdev.me',
-    image: 'https://abdulmoizdev.me/images/profile.jpg',
+    image: 'https://abdulmoizdev.me/images/profile.png',
     jobTitle: 'MERN Stack Developer',
     sameAs: [
       'https://www.linkedin.com/in/abdull-moiz-b27438313/',

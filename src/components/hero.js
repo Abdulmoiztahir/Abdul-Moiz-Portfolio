@@ -70,20 +70,20 @@ export default function Hero() {
                     <div className="absolute -left-14 top-0 h-36 w-36 rounded-full bg-cyan-400/15 blur-3xl" />
                     <div className="absolute -right-14 bottom-0 h-36 w-36 rounded-full bg-blue-400/20 blur-3xl" />
 
-                    <div className="relative overflow-hidden rounded-2xl border border-white/10">
+                    <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/20">
                         <Image
-                            src="/images/profile.jpg"
+                            src="/images/profile.png"
                             alt="Abdul Moiz Tahir"
                             width={520}
                             height={620}
                             priority
-                            className="h-auto w-full object-cover"
+                            className="h-auto w-full object-cover transform scale-105"
                         />
                     </div>
 
                     <div className="relative mt-4 rounded-xl border border-white/15 bg-white/10 p-4 backdrop-blur-md">
                         <p className="text-xs uppercase tracking-[0.14em] text-slate-400">Current Focus</p>
-                        <p className="mt-2 text-sm text-slate-200">Next.js 15, APIs, performant UI systems, and production-grade MongoDB workflows.</p>
+                        <p className="mt-2 text-sm text-slate-200">Next.js, APIs, performant UI systems, and production-grade MongoDB workflows.</p>
                     </div>
                 </motion.div>
             </div>

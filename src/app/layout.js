@@ -43,7 +43,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/profile.jpg',
+        url: '/images/profile.png',
         width: 1200,
         height: 630,
         alt: 'Abdul Moiz portfolio preview',
@@ -54,7 +54,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'Abdul Moiz | MERN Stack Developer',
     description: 'Premium portfolio of Abdul Moiz, a MERN stack developer building scalable web products.',
-    images: ['/images/profile.jpg'],
+    images: ['/images/profile.png'],
   },
   robots: {
     index: true,

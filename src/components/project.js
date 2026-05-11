@@ -25,7 +25,7 @@ const projects = [
     link: '#',
   },
   {
-    title: 'Furniro Commerce',
+    title: 'Furniro E-Commerce',
     category: 'E-Commerce Experience',
     image: '/images/ecommerce.png',
     description:
