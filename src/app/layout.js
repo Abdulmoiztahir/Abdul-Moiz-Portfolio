@@ -1,6 +1,7 @@
 import './globals.css'
 import { Manrope, Sora } from 'next/font/google'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Analytics } from '@vercel/analytics/next'
 
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' })
 const sora = Sora({ subsets: ['latin'], variable: '--font-sora' })
@@ -83,6 +84,7 @@ export default function RootLayout({ children }) {
         >
           {children}
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
